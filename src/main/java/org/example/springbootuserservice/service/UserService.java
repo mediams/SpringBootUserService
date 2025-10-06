@@ -27,6 +27,7 @@ public class UserService {
         return mapper.usersToUserDto(repository.findAll());
     }
 
+    @Transactional
     public UserDto create(UserCreateDto dto) {
         User user = mapper.createDtoToEntity(dto);
         return mapper.userToUserDto(repository.save(user));
